@@ -6,10 +6,6 @@ routeTest.get("/login",(req, res)=>{
 
 })
 
-routeTest.get("/register",(req, res)=>{
-    res.send("Its a register page ")
-
-})
 
 
 module.exports = routeTest ;

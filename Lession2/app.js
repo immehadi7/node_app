@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const userRouteTest = require('./routes/userRoute')
+const adminRouteTest = require('./routes/useAdmin')
 
-app.use(userRouteTest) ; 
+app.use("/api/user/", userRouteTest ) ;  //user route ke call kore ansi thats it 
+app.use("/api/user/" , adminRouteTest);
 
 app.get("/about" ,  (req, res)=>{
     res.send("Its a about page ")
