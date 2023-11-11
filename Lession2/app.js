@@ -12,10 +12,25 @@ app.get("/about" ,  (req, res)=>{
     res.send("Its a about page ")
 
 })
-app.get("/",(req, res)=>{
-    res.send("Its a home page ")
+app.get("/regis",(req, res)=>{
+   res.redirect('api/user/login')
+//    redirect korbe login e 
 
 })
+
+
+app.use(express.static('./htmlFile'));
+
+// eivabe hobee express 5 , send file 
+
+app.get("/",(req, res)=>{
+        res.statusCode = 201 ;
+        res.sendFile('./htmlFile/index.html')
+
+  
+ 
+ })
+ 
 
 app.use((req,res)=>{
     res.send("<h3>Wrogng 404</h3>")
